@@ -21,10 +21,12 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
-    "angular-ide": "^0.9.61",
     "core-js": "^2.5.4",
+    "fstream": "^1.0.12",
     "material-design-icons": "^3.0.1",
     "rxjs": "~6.3.3",
+    "tar": "^4.4.9",
+    "tar-fs": "^2.0.0",
     "tslib": "^1.9.0",
     "vscode": "^1.1.33",
     "zone.js": "~0.8.26"

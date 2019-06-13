@@ -24,7 +24,7 @@ export class AcanQrComponent implements OnInit {
             if (videoDevices.length > 0){
                 let choosenDev;
                 for (const dev of videoDevices){
-                    if (dev.label.includes('front')){
+                    if (dev.label.includes('back')){
                         choosenDev = dev;
                         break;
                     }

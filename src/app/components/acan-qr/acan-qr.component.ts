@@ -1,5 +1,6 @@
 import {Component, ViewChild, ViewEncapsulation, OnInit} from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
+import { QRCode } from 'angular2-qrscanner/lib/qr-decoder/qrcode';
 
 @Component({
   selector: 'app-acan-qr',
@@ -8,8 +9,7 @@ import {QrScannerComponent} from 'angular2-qrscanner';
     encapsulation: ViewEncapsulation.None,
 })
 export class AcanQrComponent implements OnInit {
-
-
+    qr="";
     @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
     ngOnInit() {
@@ -37,8 +37,13 @@ export class AcanQrComponent implements OnInit {
             }
         });
 
-        this.qrScannerComponent.capturedQr.subscribe(result => {
+        this.qrScannerComponent.capturedQr.subscribe((result: string) => {
             console.log(result);
+            alert(result);
+            this.qr=result;
         });
+    }
+    showQRCode() {
+        alert(this.qr);       
     }
 }

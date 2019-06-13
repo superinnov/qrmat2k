@@ -21,6 +21,8 @@
     "@angular/platform-browser": "~7.2.0",
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
+    "@material/list": "^2.3.0",
+    "angular2-qrscanner": "^1.0.7",
     "core-js": "^2.5.4",
     "fstream": "^1.0.12",
     "material-design-icons": "^3.0.1",

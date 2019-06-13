@@ -4,7 +4,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item>
+      <button mat-menu-item (click)="showAccueilPage()">
         <mat-icon>home</mat-icon>
         <span>Accueil</span>
       </button>
@@ -12,7 +12,7 @@
         <mat-icon>people_outline</mat-icon>
         <span>Connexion</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="showQRCodePage()">
         <mat-icon>videocam</mat-icon>
         <span>Lire des QR Code</span>
       </button>
@@ -24,3 +24,6 @@
   </span>
   <span class="fill-remaining-space">MAT2K reborn</span>
 </mat-toolbar>
+<main>
+    <router-outlet></router-outlet>
+</main>

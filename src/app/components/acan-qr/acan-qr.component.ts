@@ -1,6 +1,5 @@
 import {Component, ViewChild, ViewEncapsulation, OnInit} from '@angular/core';
 import {QrScannerComponent} from 'angular2-qrscanner';
-import { QRCode } from 'angular2-qrscanner/lib/qr-decoder/qrcode';
 
 @Component({
   selector: 'app-acan-qr',
@@ -9,7 +8,27 @@ import { QRCode } from 'angular2-qrscanner/lib/qr-decoder/qrcode';
     encapsulation: ViewEncapsulation.None,
 })
 export class AcanQrComponent implements OnInit {
-    qr="";
+    qr="";   
+    m: { [id: string]: string} = {
+        "000001": "bureau",
+        "000002": "chaise",
+        "000003": "bureau",
+        "000004": "chaise",
+        "000005": "armoire",
+        "000006": "bureau",
+        "000007": "armoire",
+        "000008": "table",
+        "000009": "fauteuil",
+        "000010": "fauteuil"    
+    };
+
+    getKey(el: {}){
+        return Object.keys(el)[0];
+    }
+  
+    getValue(el: { [x: string]: any; }){
+        return el[this.getKey(el)];
+    }
     @ViewChild(QrScannerComponent) qrScannerComponent: QrScannerComponent ;
 
     ngOnInit() {
@@ -39,11 +58,14 @@ export class AcanQrComponent implements OnInit {
 
         this.qrScannerComponent.capturedQr.subscribe((result: string) => {
             console.log(result);
-            alert(result);
+            alert("Article (id:" + result + ") : " + this.m[result]);
             this.qr=result;
         });
     }
     showQRCode() {
-        alert(this.qr);       
+        alert("Article (id:" + this.qr + ") : " + this.m[this.qr]);       
+    }
+    qrCode(): string {
+        return "Article (id:" + this.qr + ") : " + this.m[this.qr];
     }
 }

@@ -1,6 +1,7 @@
-<button mat-menu-item (click)="showQRCode()">Action 1</button>
+<button mat-menu-item (click)="showQRCode()">Afficher dernier scan</button>
 <p>
-  Scan Qr code
+  Scan Qr code <BR>
+  {{qrCode()}}
 </p>
 <qr-scanner
 [debug]="false"

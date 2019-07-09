@@ -3,11 +3,20 @@
   Scan Qr code <BR>
   {{qrCode()}}
 </p>
-<qr-scanner
-[debug]="false"
-[canvasWidth]="320"
-[canvasHeight]="420"
-[stopAfterScan]="false"
-[updateTime]="900">
-</qr-scanner>
+
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Scan
+      </mat-panel-title>
+      <mat-panel-description>
+        Scanner des articles
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <qr-scanner [debug]="false" [canvasWidth]="320" [canvasHeight]="420" [stopAfterScan]="false" [updateTime]="900">
+    </qr-scanner>
+  </mat-expansion-panel>
+</mat-accordion>
+
 
